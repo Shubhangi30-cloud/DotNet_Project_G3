@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Role";
+}
+
+<h2 style="color: #ffffff; font-size: 28px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin: 0;">Role</h2>
+
+<div class=" role" style="font-family: Arial, sans-serif; text-align: center; margin-top: 50px;">
+    <div>
+        <button onclick="location.href='@Url.Action("Login","AdminActions")'"
+                 style="padding: 10px 20px; margin: 10px 0; background-color: #ccc; color: #000000; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;"><b>Admin</b></button><br />
+        <button onclick="location.href='@Url.Action("Login", "VendorActions")'" 
+                style="padding: 10px 20px; margin: 10px 0; background-color: #ccc; color: #000; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;"><b>Vendor</b></button><br />
+        <button onclick="location.href='@Url.Action("Login", "CustomerActions")'"
+                  style="padding: 10px 20px; margin: 10px 0; background-color: #ccc; color: #000; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;"><b>Customer</b></button>
+    </div>
+</div>  

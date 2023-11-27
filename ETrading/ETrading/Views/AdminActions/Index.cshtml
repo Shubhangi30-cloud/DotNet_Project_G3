@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="Admins-container" style="height: 70%; width: 80%; margin: 0 auto; background-color: #0042f336; border: none; padding: 20px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);">
+    <h2 style="color: #ccc; text-align: center; font-family: Arial, sans-serif;">Welcome, Admin!</h2>
+
+    <div class='Admin-action' style="text-align: center;">
+        <h2 style="font-size: 18px; color: #ccc;">What would you like to view?</h2>
+        <ul style="padding: 0;">
+            <button style="padding: 8px; background-color: #ffffff; color: #fff; border: none; cursor: pointer;">
+            <li style="color: #fff; margin-bottom: 5px;">@Html.ActionLink("View Product List", "Index", "Product")</li>
+            </button>
+            <button style="padding: 8px; background-color: #ffffff; color: #fff; border: none; cursor: pointer;">
+            <li style="margin-bottom: 5px;">@Html.ActionLink("View Vendor List", "Index", "Vendor")</li>
+            </button>
+
+            <button style="padding: 8px; background-color: #fff; color: #fff; border: none; cursor: pointer;">
+            <li style="margin-bottom: 5px;">@Html.ActionLink("View Customer List", "Index", "Customer")</li>
+            </button>
+        </ul>
+    </div>
+</div>

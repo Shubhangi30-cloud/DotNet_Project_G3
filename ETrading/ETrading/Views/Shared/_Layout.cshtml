@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My E-TRADING Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+
+        body {
+            display: flex;
+            background: url("../../Images/Ebackground.jpg") no-repeat center;
+            height: 100%;
+            width: 100%;
+            color: #fff;
+            min-height: 500px;
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: 'Ubuntu', sans-serif;
+
+        }
+        .navbar {
+           
+            padding-bottom:5rem;
+            position: fixed;
+            width: 100%;
+            z-index: 999;
+            font-family: 'Ubuntu', sans-serif;
+            transition: all 0.3s ease;
+            padding-right:2rem;
+            padding-left:2rem;
+        }
+
+            .navbar.sticky {
+                padding: 15px 0;
+                background: rgb(34, 31, 31);
+            }
+
+            .navbar .max-width {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .navbar .logo a {
+                color: #fff;
+                font-size: 35px;
+                font-weight: 600;
+            }
+
+                .navbar .logo a span {
+                    color: #fff;
+                    transition: all 0.3s ease;
+                }
+
+                    .navbar .logo a span:hover {
+                        color: black;
+                    }
+
+            .navbar.sticky .logo a span {
+                color: #fff;
+            }
+
+            .navbar .menu li {
+                list-style: none;
+                display: inline-block;
+            }
+
+                .navbar .menu li a {
+                    display: block;
+                    color: #fff;
+                    font-size: 18px;
+                    font-weight: 500;
+                    margin-left: 25px;
+                    transition: color 0.3s ease;
+                }
+
+                    .navbar .menu li a:hover {
+                        color: rgb(14, 13, 13);
+                    }
+
+            .navbar.sticky .menu li a:hover {
+                color: #fff;
+            }
+
+        /* menu btn styling */
+        .menu-btn {
+            color: #fff;
+            font-size: 23px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .scroll-up-btn {
+            position: fixed;
+            height: 45px;
+            width: 42px;
+            background: crimson;
+            right: 30px;
+            bottom: 10px;
+            text-align: center;
+            line-height: 45px;
+            color: #fff;
+            z-index: 9999;
+            font-size: 30px;
+            border-radius: 6px;
+            border-bottom-width: 2px;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+            .scroll-up-btn.show {
+                bottom: 30px;
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            .scroll-up-btn:hover {
+                filter: brightness(90%);
+            }
+
+    </style>
+</head>
+<body>
+
+        <div class="scroll-up-btn">
+            <i class="fas fa-angle-up"></i>
+        </div>
+        <nav class="navbar">
+            <div class="max-width">
+                <div class="logo" ><a href="#">E-Trading Platform</a></div>
+                <ul class="menu">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Role", "Role", "Home")</li>
+
+                    
+                    
+                </ul>
+                <div class="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My E-Trading Platform</p>
+            </footer>
+        </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
